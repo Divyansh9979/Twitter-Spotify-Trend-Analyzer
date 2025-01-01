@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Spotify Access</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            border: 1px solid #ccc;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        a:hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome!</h1>
+<p>To access your Spotify data through this application, you'll need to authorize it.</p>
+<p>Click the button below to be redirected to the Spotify login page.</p>
+<a href="https://accounts.spotify.com/authorize/?scope=user-read-private playlist-read-private playlist-modify-public user-library-read user-read-recently-played streaming app-remote-control&response_type=code&redirect_uri=http://localhost:8080/responseFromSpotify&client_id=7810d066df14482c8b84f3804291377d">Authorize on Spotify</a>
+</body>
+</html>
