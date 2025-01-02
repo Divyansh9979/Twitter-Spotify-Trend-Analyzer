@@ -1,4 +1,4 @@
-package com.example.TrendAnalyzerApplication;
+package com.example.TrendAnalyzerApplication.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AccessTokenDto {
 
-	private String access_token;
+    private String access_token;
 
 }

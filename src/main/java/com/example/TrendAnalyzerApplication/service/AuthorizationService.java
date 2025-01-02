@@ -1,26 +1,17 @@
-package com.example.TrendAnalyzerApplication;
+package com.example.TrendAnalyzerApplication.service;
 
-import lombok.extern.slf4j.Slf4j;
+import com.example.TrendAnalyzerApplication.dto.AccessTokenDto;
+import com.example.TrendAnalyzerApplication.config.SpotifyConnectionConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.Arrays;
 import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
 
-import static com.example.TrendAnalyzerApplication.RestCallUtils.checkResponseCodeExpectedString;
-import static org.springframework.http.HttpMethod.GET;
-import static org.springframework.http.HttpStatus.*;
-
-@Component
-@Slf4j
+@Service
 public class AuthorizationService {
 
     @Autowired
@@ -47,5 +38,4 @@ public class AuthorizationService {
         ResponseEntity<AccessTokenDto> response = restTemplate.postForEntity(spotifyConnectionConfig.getTokenUrl(), request, AccessTokenDto.class);
         return response.getBody().getAccess_token();
     }
-
 }

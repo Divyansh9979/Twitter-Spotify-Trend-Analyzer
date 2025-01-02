@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Artists</title>
+</head>
+<body>
+<h1>Top Artists</h1>
+<p th:if="${artists.items.size() > 0}">
+<ul>
+    <li th:each="artist : ${artists.items}">
+        <a th:href="${artist.external_urls.spotify}" target="_blank">
+            <span th:text="${artist.name}"></span>
+        </a>
+    </li>
+</ul>
+</p>
+<p th:if="${artists.items.size()} == 0">
+    No artists found for the specified term.
+</p>
+<p>Term: <span th:text="${term}"></span></p>
+</body>
+</html>
